@@ -1,0 +1,88 @@
+package com.example.chattingapp.Adapters;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.chattingapp.ChatDetailActivity;
+import com.example.chattingapp.Models.Users;
+import com.example.chattingapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
+public class UsersStatusAdapter extends RecyclerView.Adapter<UsersStatusAdapter.ViewHolder>{
+    ArrayList<Users> list;
+    Context context;
+
+    public UsersStatusAdapter(ArrayList<Users> list, Context context) {
+        this.list = list;
+        this.context = context;
+    }
+
+
+    @NonNull
+    @Override
+    public UsersStatusAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        View view = LayoutInflater.from(context).inflate(R.layout.sample_show_user, parent, false);
+
+        return new UsersStatusAdapter.ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull UsersStatusAdapter.ViewHolder holder, int position) {
+
+        Users users = list.get(position);
+
+        Picasso.get().load(users.getProfilePic()).placeholder(R.drawable.user).into(holder.imageView);
+        holder.txtUserName.setText(users.getUserName());
+        holder.txtStatus.setText(users.getStatus());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ChatDetailActivity.class);
+                intent.putExtra("userId", users.getUserId());
+                intent.putExtra("profilePic", users.getProfilePic());
+                intent.putExtra("userName", users.getUserName());
+
+                context.startActivity(intent);
+            }
+        });
+
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    public  class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+        TextView txtUserName, txtStatus;
+
+        public ViewHolder (@NonNull View itemView) {
+            super(itemView);
+
+            imageView = itemView.findViewById(R.id.imgProfileAvatar);
+            txtUserName = itemView.findViewById(R.id.txtUserName);
+            txtStatus = itemView.findViewById(R.id.txtLastMessage);
+
+        }
+    }
+}

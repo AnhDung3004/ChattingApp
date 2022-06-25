@@ -111,6 +111,21 @@ public class SignInActivity extends AppCompatActivity {
                 signIn();
             }
         });
+        
+        binding.btnFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SignInActivity.this, "Sorry, Facebook login is not available now. We will develop this function as soon as possible!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.txtSignInWithPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignInActivity.this, PhoneSignInActivity.class);
+                startActivity(intent);
+            }
+        });
 
         if (auth.getCurrentUser() != null) {
             Intent intent = new Intent(SignInActivity.this, MainActivity.class);

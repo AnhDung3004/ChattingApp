@@ -56,6 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 progressDialog.show();
 
+
                 auth.createUserWithEmailAndPassword
                         (binding.edtEmail.getText().toString(), binding.edtPassword.getText().toString()).
                         addOnCompleteListener(new OnCompleteListener<AuthResult>() {

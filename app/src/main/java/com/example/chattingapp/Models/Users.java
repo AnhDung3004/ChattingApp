@@ -2,12 +2,13 @@ package com.example.chattingapp.Models;
 
 public class Users {
 
-    String profilePic, userName, email, password, userId, lastMessage, status;
+    String profilePic, userName, email, phone, password, userId, lastMessage, status;
 
-    public Users(String profilePic, String userName, String email, String password, String userId, String lastMessage, String status) {
+    public Users(String profilePic, String userName, String email, String phone, String password, String userId, String lastMessage, String status) {
         this.profilePic = profilePic;
         this.userName = userName;
         this.email = email;
+        this.phone = phone;
         this.password = password;
         this.userId = userId;
         this.lastMessage = lastMessage;
@@ -47,6 +48,14 @@ public class Users {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {

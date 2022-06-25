@@ -99,6 +99,13 @@ public class GroupChatActivity extends AppCompatActivity {
         binding.imgGroupSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (binding.edtGroupMessage.getText().toString().isEmpty()) {
+                    binding.edtGroupMessage.setError("Please, enter your message to send");
+                    return;
+
+                }
+
                 final String message = binding.edtGroupMessage.getText().toString();
                 final MessageModel model = new MessageModel(senderId, message);
                 model.setTimestamp(new Date().getTime());

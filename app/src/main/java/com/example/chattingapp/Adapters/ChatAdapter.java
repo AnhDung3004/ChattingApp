@@ -16,7 +16,10 @@ import com.example.chattingapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ChatAdapter extends RecyclerView.Adapter{
 
@@ -95,15 +98,30 @@ public class ChatAdapter extends RecyclerView.Adapter{
             }
         });
 
+
+        // S is the millisecond
+
+
         if (holder.getClass() == SenderViewHolder.class) {
             ((SenderViewHolder)holder).senderMsg.setText(messageModel.getMessage());
+
+            ((SenderViewHolder)holder).senderTime.setText(simpleDateFormat().format(messageModel.getTimestamp()));
+
         }
         else {
             ((ReceiverViewHolder)holder).receiverMsg.setText(messageModel.getMessage());
 
+            ((ReceiverViewHolder)holder).receiverTime.setText(simpleDateFormat().format(messageModel.getTimestamp()));
+
         }
 
     }
+
+    public SimpleDateFormat simpleDateFormat() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM' 'HH:mm");
+        return simpleDateFormat;
+    }
+
 
     @Override
     public int getItemCount() {

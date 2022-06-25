@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChattingApp">
         <activity
-            android:name=".PhoneSignInActivity"
+            android:name=".AboutOurAppActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneSignInActivity"
             android:exported="false" />
         <activity
             android:name=".GroupChatActivity"

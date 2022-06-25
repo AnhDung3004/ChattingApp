@@ -58,18 +58,28 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
 
-            case R.id.settings:
+            case R.id.updateProfile:
 
-                Intent intent1  = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent intent1 = new Intent(MainActivity.this, UpdateProfileActivity.class);
                 startActivity(intent1);
                 break;
 
+            case R.id.changePassword:
 
+                Intent intent2 = new Intent(MainActivity.this, ChangePasswordActivity.class);
+                startActivity(intent2);
+                break;
+
+            case R.id.about:
+
+                Intent intent3  = new Intent(MainActivity.this, AboutOurAppActivity.class);
+                startActivity(intent3);
+                break;
 
             case R.id.logout:
                 auth.signOut();
-                Intent intent2 = new Intent(MainActivity.this, SignInActivity.class);
-                startActivity(intent2);
+                Intent intent4 = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intent4);
                 break;
         }
 

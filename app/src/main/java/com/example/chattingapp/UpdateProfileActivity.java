@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.chattingapp.Models.Users;
-import com.example.chattingapp.databinding.ActivitySettingsBinding;
+import com.example.chattingapp.databinding.ActivityUpdateProfileBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,10 +25,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
-public class SettingsActivity extends AppCompatActivity {
+public class UpdateProfileActivity extends AppCompatActivity {
 
-
-    ActivitySettingsBinding binding;
+    ActivityUpdateProfileBinding binding;
     FirebaseStorage storage;
     FirebaseAuth auth;
     FirebaseDatabase database;
@@ -36,7 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
+        binding = ActivityUpdateProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
@@ -48,46 +47,10 @@ public class SettingsActivity extends AppCompatActivity {
         binding.iconBackArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+                Intent intent = new Intent(UpdateProfileActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
-
-        binding.txtPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SettingsActivity.this, "Our Privicy Policy is available on our website, let's take a look now", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        binding.txtAboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SettingsActivity.this, "Our Information is available on our website, let's take a look now", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        binding.txtNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SettingsActivity.this, "Don't miss our news, let's check notification on our website now", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        binding.txtInviteAFriend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SettingsActivity.this, "Introduce our app to your friends now for chatting", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        binding.txtHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SettingsActivity.this, "If you need help, visit our website to read more", Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
 
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
                 String status = binding.edtStatus.getText().toString();
                 String username = binding.edtUsername.getText().toString();
 
-                HashMap<String , Object> obj = new HashMap<>();
+                HashMap<String, Object> obj = new HashMap<>();
                 obj.put("userName", username);
                 obj.put("status", status);
 
@@ -104,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
                         .child(FirebaseAuth.getInstance().getUid())
                         .updateChildren(obj);
 
-                Toast.makeText(SettingsActivity.this, "Your information updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateProfileActivity.this, "Your information updated", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -162,7 +125,7 @@ public class SettingsActivity extends AppCompatActivity {
                             database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
                                     .child("profilePic").setValue(uri.toString());
 
-                            Toast.makeText(SettingsActivity.this, "Profile Picture Updated", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UpdateProfileActivity.this, "Profile Picture Updated", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

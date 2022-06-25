@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@color/colorPrimary"
-
-    tools:context=".SettingsActivity">
+    tools:context=".UpdateProfileActivity">
 
     <ImageView
         android:id="@+id/iconBackArrow"
@@ -36,7 +34,7 @@
             android:src="@drawable/user"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp"
-             />
+            />
 
         <ImageView
             android:id="@+id/iconPlus"
@@ -92,14 +90,16 @@
                 android:hint="Enter your status"
                 android:inputType="textPersonName"
                 android:textColor="@color/white" />
+
         </LinearLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_gravity="right"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_bg"
             android:padding="5dp"
@@ -109,84 +109,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/linear_bg"
-        android:orientation="vertical"
-        android:padding="40dp">
 
-        <TextView
-            android:id="@+id/txtPrivacyPolicy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:drawableLeft="@drawable/padlock"
-            android:drawablePadding="15dp"
-            android:padding="10dp"
-            android:text="Privacy Policy"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:drawableTint="@color/colorPrimary" />
 
-        <TextView
-            android:id="@+id/txtAboutUs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:drawableLeft="@drawable/info"
-            android:drawablePadding="15dp"
-            android:padding="10dp"
-            android:text="About Us"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:drawableTint="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txtInviteAFriend"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:drawableLeft="@drawable/group"
-            android:drawablePadding="15dp"
-            android:padding="10dp"
-            android:text="Invite a Friend"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:drawableTint="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txtNotification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:drawableLeft="@drawable/bell"
-            android:drawablePadding="15dp"
-            android:padding="10dp"
-            android:text="Notification"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:drawableTint="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txtHelp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:drawableLeft="@drawable/help"
-            android:drawablePadding="15dp"
-            android:padding="10dp"
-            android:text="Help"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:drawableTint="@color/colorPrimary" />
-    </LinearLayout>
 </RelativeLayout>

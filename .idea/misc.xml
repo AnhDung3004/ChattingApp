@@ -9,6 +9,8 @@
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/drawable/btn_bg.xml" value="0.2135" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/drawable/linear_bg.xml" value="0.2135" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/drawable/round_shape.xml" value="0.2135" />
+        <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_about_our_app.xml" value="0.371875" />
+        <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_change_password.xml" value="0.371875" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_chat_detail.xml" value="0.33" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_group_chat.xml" value="0.33" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -17,6 +19,7 @@
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_settings.xml" value="0.371875" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_sign_in.xml" value="0.23822463768115942" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_sign_up.xml" value="0.358695652173913" />
+        <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_update_profile.xml" value="0.371875" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/activity_verify_phone_number.xml" value="0.371875" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/bg_receiver.xml" value="0.371875" />
         <entry key="..\:/LT DI DONG/ChattingApp/app/src/main/res/layout/fragment_calls.xml" value="0.19166666666666668" />

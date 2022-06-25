@@ -76,17 +76,37 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                         .load(users.getProfilePic())
                                         .placeholder(R.drawable.user)
                                         .into(binding.imgAvatar);
-                                if (!confirmPass.equals(newPass)) {
-                                    binding.edtConfirmPassword.setError("Your confirm password is wrong!");
+                                if(oldPass.isEmpty()) {
+                                    binding.edtOldPassword.setError("You must enter your old password");
                                     return;
                                 }
-                                if (!oldPass.equals(users.getPassword())) {
-                                    binding.edtOldPassword.setError("Your old password is wrong!");
-                                    binding.edtOldPassword.setText("");
-                                    binding.edtNewPassword.setText("");
-                                    binding.edtConfirmPassword.setText("");
+                                else {
+                                    if (!oldPass.equals(users.getPassword())) {
+                                        binding.edtOldPassword.setError("Your old password is wrong!");
+                                        binding.edtOldPassword.setText("");
+                                        binding.edtNewPassword.setText("");
+                                        binding.edtConfirmPassword.setText("");
+                                        return;
+                                    }
+                                }
+                                if (newPass.isEmpty()) {
+                                    binding.edtNewPassword.setError("You must enter your new password");
                                     return;
                                 }
+                                else {
+                                    if (!confirmPass.equals(newPass)) {
+                                        if(confirmPass.isEmpty()){
+                                            binding.edtConfirmPassword.setError("You have to confirm your new password!");
+                                            return;
+                                        }
+                                        else {
+                                            binding.edtConfirmPassword.setError("Your confirm password is wrong!");
+                                            return;
+                                        }
+                                    }
+                                }
+
+
 
                                 HashMap<String, Object> obj = new HashMap<>();
                                 obj.put("password", confirmPass);
